@@ -25,6 +25,9 @@ export type PersonaType = {
   name: string;
   subtitle: string;
   description: string;
+  goldQuote: string;
   imagePath: string;
   dominantDimensions: (keyof DimensionWeights)[];
+  matchPct: number;
+  hitCount: number;
 };
