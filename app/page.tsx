@@ -1,65 +1,49 @@
-import Image from "next/image";
+import Link from "next/link";
+import Layout from "@/components/Layout";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <Layout>
+      <div className="flex flex-col items-center justify-center flex-1 gap-10 py-16 px-2">
+        {/* Valorant-style geometric emblem */}
+        <div
+          className="animate-[fadeUp_0.6s_ease-out_both] relative flex items-center justify-center"
+          aria-hidden="true"
+        >
+          <div className="w-14 h-14 rotate-45 bg-red-500/10 border-2 border-red-500/40 rounded-sm" />
+          <div className="absolute w-5 h-5 rotate-45 bg-red-500 rounded-[3px]" />
+        </div>
+
+        {/* Title block */}
+        <div className="animate-[fadeUp_0.6s_ease-out_0.15s_both] text-center space-y-4">
+          <h1 className="text-4xl font-black text-slate-800 tracking-tight leading-none">
+            瓦村人格测试
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl font-bold text-slate-400 tracking-[0.25em] uppercase">
+            WBTI
+          </p>
+          <p className="text-base text-slate-500 leading-relaxed max-w-[280px] mx-auto pt-1">
+            你是真性情蕾娜，还是上朝幽影？
+            <br />
+            15 道题测出你的瓦村专属人设。
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+
+        {/* CTA Button */}
+        <Link
+          href="/quiz"
+          className="animate-[fadeUp_0.6s_ease-out_0.3s_both] w-full max-w-xs block"
+        >
+          <div className="w-full bg-red-500 hover:bg-red-600 active:bg-red-700 text-white font-bold text-lg py-4 rounded-2xl text-center transition-colors duration-200 cursor-pointer select-none shadow-lg shadow-red-500/30">
+            开始测试
+          </div>
+        </Link>
+
+        {/* Footer hint */}
+        <p className="animate-[fadeUp_0.6s_ease-out_0.5s_both] text-xs text-slate-400 text-center">
+          约 3 分钟完成 · 结果图片可保存分享
+        </p>
+      </div>
+    </Layout>
   );
 }
